@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sitecore | Frontend</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>L</b>AB</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Lab</b>Lateral</span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <!-- Optionally, you can add icons to the links -->
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Environment setup</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="nodeJs.html">Node JS installation</a></li>
+                        <li><a href="gitBash.html">Git bash for Windows</a></li>
+                        <li><a href="bower.html">Bower package manager</a></li>
+                        <li><a href="gulp.html">Gulp task runner</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Project structure</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="bem.html">BEM methodology</a></li>
+                        <li><a href="folderStructure.html">Folder structure</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Old projects</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="karndean.html">Karndean</a></li>
+                        <li><a href="aveva.html">Aveva</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <section class="content-header">
+
+
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <h1>Gulp task runner and installation</h1>
+
+            <ul>
+                <li><h4>There are a lot of tasks involved with creating and deploying a front-end application.  Common tasks include things like watching file changes, concatenating/minifying files, prefixing files for different browsers, and linting Javascript.</h4></li>
+                <li><h4>Installation of gulp is straightforward. It is simple as running <code> npm install gulp -g</code>. This will install it globally on your personal computer so you can use it from within terminal. </h4></li>
+                <li><h4>We will be using gulp for several things from compiling our sass code, watching for any changes and compiling to minifying js and css and optimising images. These are just but a few examples what gulp can do but it can do much much more then that. </h4></li>
+            </ul>
+
+            <h1>Why should we use gulp? </h1>
+
+            <h4>While graphic tools like Koala are good enough for one time compiling I have an opinion that graphic tool will never be as powerfull as terminal which is actually the case.  Currently we have several basic and most important things created for usage in the gulpfile.js. https://goo.gl/iU2WE2. This will be regulary maintained and updated by Kirk and Myself mainly but all other Senior or even Junior Frontend developers who know the ways of gulp are welcomed to add their input in the gulpfile.</h4>
+            <ul>
+                <li><h4>Compile of sass and error handling <code>gulp compile</code></h4></li>
+                <li><h4>Watch task that you can fire up while developing and it will automatically watch for any changes in any sass file and automatically compile the style.scss to style.css <code>gulp watch</code></h4></li>
+                <li><h4>Minification of css <code>gulp minify-css</code></h4></li>
+                <li><h4>Minification of js <code>gulp compress</code> </h4></li>
+            </ul>
+
+            <h4>All of this tasks are ran through the terminal from the inside of the folder where the gulpfile.js is located considering you have the gulp already installed globally if you do not there is also a way we prepared for the gulp to install in just the project folder which i will explain right now</h4>
+
+            <h1>Important!</h1>
+            <h4>There is a certain prerequisite of using this kit when we download it or clone it via github into the sitecore project and that is we need to run a command which will install all our dependencies for us and set everything up for us. This needs to be run inside wherever the package.json is located. Package json looks like <a href="https://goo.gl/8BZaG3">this</a> . If we inspect the screenshot we will see that we have Dev dependecies. These are actually all the packages used currently.  From minification to compilation to gulp itself. To install everything with one liner is to just run <code>npm install</code> where that package.json is located and you are ready to work.</h4>
+            <h4>If for any reason you get the error that you are missing <a href="https://goo.gl/v4EG3g">bindings</a>  which usually happens because your environment has changed since running `npm install`.
+                Run <code>`npm rebuild node-sass`</code> to build the binding for your current environment.</h4>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2017 <a href="#">Lab Lateral</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="pull-right-container">
+                  <span class="label label-danger pull-right">70%</span>
+                </span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+</body>
+</html>

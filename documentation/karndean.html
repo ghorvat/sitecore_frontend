@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sitecore | Frontend</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>L</b>AB</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Lab</b>Lateral</span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <!-- Optionally, you can add icons to the links -->
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Environment setup</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="nodeJs.html">Node JS installation</a></li>
+                        <li><a href="gitBash.html">Git bash for Windows</a></li>
+                        <li><a href="bower.html">Bower package manager</a></li>
+                        <li><a href="gulp.html">Gulp task runner</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Project structure</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="bem.html">BEM methodology</a></li>
+                        <li><a href="folderStructure.html">Folder structure</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Old projects</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="karndean.html">Karndean</a></li>
+                        <li><a href="aveva.html">Aveva</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <section class="content-header">
+
+
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+
+            <h1>Karndean Project</h1>
+
+
+            <h4>Karndean project stands out in a bad way from everything i have written before. While it has perfectly
+                valid code the folder structure is in a really bad shape. This will be rectified soon enough by myself
+                tomorrow i think. It still will not have the same structure as I have described before. The structure
+                and the flow you have read beforehand is what we should aim for to improve our frontend.</h4>
+
+
+            <h4>Main starting point for Karndean and any work on it is Master branch. The flow is the following:</h4>
+            <ul>
+                <li><h4>Branch out from master into a branch named by the task or feature you are working on for example:
+                    <code>git checkout -b KASU-216</code></h4></li>
+                <li><h4>Continue working in the branch on your feature or a bug fix and when you are finished push it to the
+                    remote (github) with the following <code>git add .</code> This will add all the files and prepare them for commit. If you have a lot of
+                        stuff to add in the terminal and you are unsure what to add, add only the files you are sure off with the following <code>git add path/to/file/something.css path/to/file/something.js path/to/file/something.css</code>. You can add multiple files by appending them to the end and having a space between them.</h4></li>
+                <li><h4>After you have added everything please commit it with a semantical message of what you have done <code>Git commit "Kasu-216 bug"</code></h4></li>
+                <li><h4>And in the end push it to remote with <code>git push origin KASU-216</code></h4></li>
+            </ul>
+
+            <h4>Now with github workflow explained lets get to the specifics </h4>
+            <h4>Current work for the <strong>Finder&Moodboard functionallities</strong> is being done in the <code>finderAndMoodboard branch</code> </h4>
+
+            <h1>To setup the current environment on the Karndean please do the following:</h1>
+            <ul>
+                <li><h4><code>git clone git@github.com:LabDigital/Karndean.git (i suppose you have added your ssh keys to the github)</code> This will clone the whole repository to your local environment</h4></li>
+                <li><h4><code>git checkout finderAndMoodboard(or any other branch)</code></h4></li>
+                <li><h4>Work on your fix</h4></li>
+                <li><h4><code>git add . or specific files as explained above</code></h4></li>
+                <li><h4><code>git commit "Explanation of the work done"</code></h4></li>
+                <li><h4><code>git pull</code>Just to get all the changes other developers might have pushed. There are several scenarios that can occur while doing this </h4>
+                    <ul>
+                        <li>
+                            <h4>Git conflict - this is inevitable if multiple developers are working on the project and it will occur. </h4>
+                        </li>
+                        <li><h4>Noone pushed anything and the branch is up to date and you are good to push</h4></li>
+                        <li><h4>Merge request occurs when someone did additional work but git can merge everything without conflicts. You will ussually get a question in the terminal if you want to merge your changes please use the vi or vim or GUI write and quit commands respectively depending on which you are using.</h4></li>
+                    </ul>
+                </li>
+                <li><h4>And finally do a <code>git push</code>. There is no need to specify the branch but just in case if git refuses to push to remote write <code>git push origin finderAndMoodboard </code> or any name of the branch you are working on</h4></li>
+
+                <li><h4>Do not forget to pull always before you push if more developers are working ona fix except you.</h4></li>
+
+            </ul>
+
+
+            <h1>File structure</h1>
+            <h4>Currently everything is in folder <strong>Karndean/HTMLConversion</strong> </h4>
+            <h4>Less files are found in <strong>Karndean/HTMLConversion/less</strong></h4>
+            <h4>After we have finished working in the less files we are compiling the <strong>Karndean/HTMLConversion/less/bootstrap.less</strong> to <strong>dist/css/bootstrap.css</strong> with a program of your personal reference (koala or if using terminal lessc) since the gulp flow is not active here </h4>
+            <h4>For php files you can reuse any of the current existing in the HTMLConversion folder. At the time we split everything up in separate html files and included everything through the php include functions for which you will need to have simple apache php environment setup (ampps or something of your personal preference). </h4>
+
+            <h4>Location of all the blocks can be found in <strong>Karndean/HTMLConversion/elements</strong></h4>
+            <h1 style="color:red">NOTICE!</h1>
+            <h4>This will change in a few days when we will update this document for the new flow</h4>
+
+
+            <ul>
+
+            </ul>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2017 <a href="#">Lab Lateral</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="pull-right-container">
+                  <span class="label label-danger pull-right">70%</span>
+                </span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+</body>
+</html>

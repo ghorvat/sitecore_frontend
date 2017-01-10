@@ -1,0 +1,25 @@
+//These are general stylings for elements that can be standalone
+.m-button {
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  //Standalone element modifier
+  &_red {
+    background: red;
+  }
+  &_blue {
+    background: blue;
+  }
+  //Size modifiers
+  &_small {
+    width: 50px;
+  }
+  //Size modifiers
+  &_medium{
+    width: 100px;
+  }
+  //Size modifiers
+  &_big {
+    width: 200px;
+  }
+}

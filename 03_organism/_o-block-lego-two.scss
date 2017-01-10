@@ -1,0 +1,23 @@
+.o-block-lego-two {
+  background: white;
+  padding: 50px;
+  //Element of the organism
+  &__title {
+    font-size: 30px;
+    color: red;
+    margin: 0;
+    //Title element modifiers
+    &_yellow {
+      color: #ffff00;
+    }
+    &_blue {
+      color: #0000fe;
+    }
+  }
+  //Button element of block-lego
+  &__button {
+    &_pink {
+      background: pink;
+    }
+  }
+}

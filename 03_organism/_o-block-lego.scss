@@ -1,0 +1,25 @@
+.o-block-lego {
+  height: 200px;
+  width: 100%;
+  background: grey;
+  padding: 15px;
+  //Element of the organism
+  &__title {
+    font-size: 22px;
+    color: #fff;
+    margin: 0;
+    //Title element modifiers
+    &_yellow {
+      color: #ffff00;
+    }
+    &_blue {
+      color: #0000fe;
+    }
+  }
+  //Element of the organism
+  &__button {
+    &_purple {
+      background: purple;
+    }
+  }
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sitecore | Frontend</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>L</b>AB</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Lab</b>Lateral</span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+
+
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <!-- Optionally, you can add icons to the links -->
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Environment setup</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="nodeJs.html">Node JS installation</a></li>
+                        <li><a href="gitBash.html">Git bash for Windows</a></li>
+                        <li><a href="bower.html">Bower package manager</a></li>
+                        <li><a href="gulp.html">Gulp task runner</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Project structure</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="bem.html">BEM methodology</a></li>
+                        <li><a href="folderStructure.html">Folder structure</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Old projects</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="karndean.html">Karndean</a></li>
+                        <li><a href="aveva.html">Aveva</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <section class="content-header">
+
+
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <h1>00_base folder</h1>
+            <h4>All base styling should go in this folder that includes custom variables, mixins and general typography. Everything that seems general and is not specific to us it should go into this folder.</h4>
+
+
+            <h1>01_utility folder</h1>
+            <h4> All utility styles you might need during the duration of the project should go in this folder. Some of the utility classes you could put is for no paddings, no margins and so on there is an example given</h4>
+
+            <h1>02_molecule folder</h1>
+            <h4>All standalone element styles should go into this folder. That means if you have general button style for example <strong>All buttons have a modifier of hover which is red color and there are three type of button length</strong> this would all go in here. One class and scss file would be made for general styling and then three modifiers for the width. Example is given in the <strong>02_molecule folder</strong></h4>
+
+            <h1>03_organism folder</h1>
+            <h4>Organism folder is for the block level elements. Elements that are being built from lego blocks or elements</h4>
+
+            <h1>04_Page folder</h1>
+            <h4>Page folder is for all the site-wide stylings that will be applied sitewide</h4>
+
+            <h1>Bower components folder</h1>
+            <h4>Bower components folder is the folder automatically created by the Bower package manager and it contains all the packages installed by the developer</h4>
+
+            <h1>Dist folder</h1>
+            <h4>Dist folder contains compiled css and custom js files. It also containes minified js and css files if we decide to minify it which is described <a href="gulp.html">Here</a></h4>
+
+            <h1>Bower.json file</h1>
+            <h4>Bower.json is the configuration file for the Bower which contains all the dev dependencies and with which you will control the packages we install by Bower and update them. Please review this <a href="bower.html">section</a> for more details</h4>
+
+            <h1>Gulpfile.js file</h1>
+            <h4>Gulpfile.js is the configuration file for the gulp task runner. Please visit this <a href="gulp.html">section</a> for more details</h4>
+
+            <h1>package.json file</h1>
+            <h4>Package.json is the configuration and the beating heart of this kit. Please visit this <a href="nodeJs.html">section</a> for more details</h4>
+
+            <h1>Important!</h1>
+            <h4>There is a certain prerequisite of using this kit when we download it or clone it via github into the sitecore project and that is we need to run a command which will install all our dependencies for us and set everything up for us. This needs to be run inside wherever the package.json is located. Package json looks like <a href="https://goo.gl/8BZaG3">this</a> . If we inspect the screenshot we will see that we have Dev dependecies. These are actually all the packages used currently.  From minification to compilation to gulp itself. To install everything with one liner is to just run <code>npm install</code> where that package.json is located and you are ready to work.</h4>
+            <h4>If for any reason you get the error that you are missing <a href="https://goo.gl/v4EG3g">bindings</a>  which usually happens because your environment has changed since running `npm install`.
+                Run <code>`npm rebuild node-sass`</code> to build the binding for your current environment.</h4>
+
+
+        </section>
+
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2017 <a href="#">Lab Lateral</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="pull-right-container">
+                  <span class="label label-danger pull-right">70%</span>
+                </span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
+</html>
