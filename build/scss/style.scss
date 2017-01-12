@@ -1,5 +1,5 @@
 //Vendor(Bootstrap)
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../_system/bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 // 00_base
 @import "00_base/b-custom-variables";
 @import "00_base/b-mixins";
@@ -14,4 +14,3 @@
 
 //02_molecule
 @import "02_molecule/m-button";
-
