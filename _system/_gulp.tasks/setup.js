@@ -23,11 +23,11 @@ gulp.task('install-css', function() {
 
     // A.1. INSTALL VENDOR LIBRARIES ----------------------------------------------------------------------------------
 
-    for( library in config.assets.css.libraries) {
+    for( libraries in config.dist.css.libraries) {
         
-        gulp.src(['_bower.cache/' + config.assets.css.libraries[library] ])
-        .pipe(gulp.dest(PATH + '/dist/css/library').on('error', gutil.log))
-        gutil.log(gutil.colors.cyan('++ Installing ' + config.assets.css.libraries[library]));
+        gulp.src(['bower_components/' + config.dist.css.libraries[libraries] ])
+        .pipe(gulp.dest(PATH + '/dist/css/libraries').on('error', gutil.log))
+        gutil.log(gutil.colors.cyan('++ Installing ' + config.dist.css.libraries[libraries]));
 
     }
 
@@ -45,7 +45,7 @@ gulp.task('update-css', function() {
 
     for( library in config.assets.css.libraries) {
         
-        gulp.src(['_bower.cache/' + config.assets.css.libraries[library] ])
+        gulp.src(['bower_components/' + config.assets.css.libraries[library] ])
         .pipe(gulp.dest(PATH + '/dist/css/library').on('error', gutil.log))
         gutil.log(gutil.colors.cyan('++ Updating ' + config.assets.css.libraries[library]));
 
@@ -63,22 +63,23 @@ gulp.task('install-js', function() {
     
     // C.1. MOVE FILES FROM BOWER -------------------------------------------------------------------------------------
 
-    for( bower in config.assets.js.bower) {
+    for( bower in config.dist.js.components.bower) {
 
-        gulp.src(['_bower.cache/' + config.assets.js.bower[bower], ])
-        .pipe(gulp.dest(PATH + '/assets/js/components/').on('error', gutil.log))
-        gutil.log(gutil.colors.cyan('++ Installing ' + config.assets.js.bower[bower]));
+        gulp.src(['bower_components/' + config.dist.js.components.bower[bower], ])
+        .pipe(gulp.dest(PATH + '/dist/js/components/').on('error', gutil.log))
+        gutil.log(gutil.colors.cyan('++ Installing ' + config.dist.js.components.bower[bower]));
+        
     }
     
     // C.1. END -------------------------------------------------------------------------------------------------------
     
     // C.2. MOVE MAP FILES FROM BOWER ---------------------------------------------------------------------------------
 
-    for( map in config.assets.js.maps) {
+    for( map in config.dist.js.components.maps) {
 
-        gulp.src(['_bower.cache/' + config.assets.js.maps[map], ])
-        .pipe(gulp.dest(PATH + '/assets/js/').on('error', gutil.log))
-        gutil.log(gutil.colors.cyan('++ Installing ' + config.assets.js.maps[map]));
+        gulp.src(['bower_components/' + config.dist.js.components.maps[map], ])
+        .pipe(gulp.dest(PATH + '/dist/js/components').on('error', gutil.log))
+        gutil.log(gutil.colors.cyan('++ Installing ' + config.dist.js.components.maps[map]));
     }
     
     // C.2. END -------------------------------------------------------------------------------------------------------
@@ -93,15 +94,15 @@ gulp.task('concat-js', function() {
 
     var files = [];
     
-    for( component in config.assets.js.order) {
+    for( component in config.dist.js.components.order) {
 
-        files.push(PATH + '/assets/js/components/' + config.assets.js.order[component]);
+        files.push(PATH + '/dist/js/components/' + config.dist.js.components.order[component]);
 
     }
         
     gulp.src(files)
         .pipe(concat('components.js'))
-        .pipe(gulp.dest(PATH + '/assets/js/').on('error', gutil.log))
+        .pipe(gulp.dest(PATH + '/dist/js/').on('error', gutil.log))
         gutil.log(gutil.colors.cyan('++ Compiling components.js file '));
 
 });

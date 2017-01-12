@@ -6,26 +6,28 @@
         
         "js" : {
             
-            "bower" : [
+            "components" : {
                 
-                "modernizr/modernizr.js",
-                "jquery/dist/jquery.js"
+                "bower" : [
 
-            ],
-            
-            "order" : [
-                
-                "modernizr.js",
-                "jquery.js"
+                    "jquery/dist/jquery.min.js",
+                    "bootstrap-sass/assets/javascripts/bootstrap.min.js"
 
-            ],
-            
-            "maps" : [
+                ],
 
-                "jquery/dist/jquery.min.map"
+                "order" : [
 
-            ]
-            
+                    "jquery.min.js",
+                    "bootstrap.min.js"
+
+                ],
+
+                "maps" : [
+
+                    "jquery/dist/jquery.min.map"
+
+                ]
+            }
         },
         
         "css" : {
