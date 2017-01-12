@@ -26,7 +26,7 @@ gulp.task('install-css', function() {
     for( library in config.assets.css.libraries) {
         
         gulp.src(['_bower.cache/' + config.assets.css.libraries[library] ])
-        .pipe(gulp.dest(PATH + '/assets/css/library').on('error', gutil.log))
+        .pipe(gulp.dest(PATH + '/dist/css/library').on('error', gutil.log))
         gutil.log(gutil.colors.cyan('++ Installing ' + config.assets.css.libraries[library]));
 
     }
@@ -46,7 +46,7 @@ gulp.task('update-css', function() {
     for( library in config.assets.css.libraries) {
         
         gulp.src(['_bower.cache/' + config.assets.css.libraries[library] ])
-        .pipe(gulp.dest(PATH + '/assets/css/library').on('error', gutil.log))
+        .pipe(gulp.dest(PATH + '/dist/css/library').on('error', gutil.log))
         gutil.log(gutil.colors.cyan('++ Updating ' + config.assets.css.libraries[library]));
 
     }

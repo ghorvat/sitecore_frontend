@@ -4,17 +4,7 @@
 
 var config = require('../_config.json'),
     gulp = require('gulp'),
-    pump = require('pump'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    gutil = require('gulp-util'),
-    concat = require('gulp-concat'),
-    jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish'),
-    gulpLoadPlugins = require('gulp-load-plugins'),
-    uglify = require('gulp-uglify')
+    gulpLoadPlugins = require('gulp-load-plugins')
 ;
 
 //Loading of plugins
@@ -98,20 +88,43 @@ function notifyLivereload(event) {
 
 // A. CSS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-gulp.task('compile-sass', function () {
+gulp.task('compile-sass', function() {
+    
+    return gulp.src(ROOT + '/build/scss/*.scss')
+    
+    // Error handling. If there is an error in sass syntax it will toss out a red error in the console, toss a notification and fire a warning sound
+    
+    .pipe(plugins.plumber({ errorHandler: function(err) {
+        plugins.notify.onError({
+            title: "Gulp error in " + err.plugin,
+            message:  err.toString()
+        })(err);
+        // play a sound once
+        plugins.util.beep();
+        this.emit('end');
+    }}))
+    
+    //Sourcemaps are for ease of use and debugging. It will out line which scss file has certain css code
+    .pipe(plugins.sourcemaps.init())
+    
+    //Sass plugin is compiling the sass into css
+    .pipe(plugins.sass())
+    .pipe(plugins.sourcemaps.write('.'))
+    .pipe(gulp.dest('../dist/css/'));
+    
+});
 
-gulp.src(ROOT + '/build/scss/style.scss')
-.pipe(sass({ 
-    loadPath: [ROOT + '/build/scss'], 
-    //'sourcemap=none': true,
-    style: 'expanded'
-})
-    .on('error', gutil.log))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-    .pipe(rename({ base : 'styles'}))
-    .pipe(gulp.dest(ROOT + '/dist/css/'))
-    gutil.log(gutil.colors.cyan('++ Built style.css + style.css.map'));
+gulp.task('autoprefix', function () {
+    
+    // A. MINIFY CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+    return gulp.src(ROOT + '/dist/css/*.css')
 
+        .pipe(plugins.postcss('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+        .pipe(gulp.dest(ROOT + 'dist/css'));
+        
+    // A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
 });
 
 // A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -120,14 +133,13 @@ gulp.src(ROOT + '/build/scss/style.scss')
 
 gulp.task('compile-js', function() {
   gulp.src([
-            ROOT + '/build/scripts/*.js',
-            ROOT + '/build/scripts/*.*.js'
+            ROOT + '/build/js/scripts/*.js',
+            ROOT + '/build/js/scripts/*.*.js'
            ])
-    .pipe(jshint(process.cwd() + '/.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest(ROOT + '/assets/js/'))
-    gutil.log(gutil.colors.cyan('++ Built app.js'));
+    //.pipe(plugins.jshint(process.cwd() + '/.jshintrc'))
+    .pipe(plugins.jshint.reporter('jshint-stylish'))
+    .pipe(plugins.concat('app.js'))
+    .pipe(gulp.dest(ROOT + '/dist/js/'));
 
 });
 
@@ -163,7 +175,7 @@ gulp.task('default', function () {
 
         // A.3. Watch JS Changes
 
-        // gulp.watch(ROOT + '/build/scripts/*', ['compile-js']);
+        gulp.watch(ROOT + '/build/js/scripts/*', ['compile-js']);
 
     // B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -192,26 +204,6 @@ gulp.task('deploy', function () {
 });
 
 // END ================================================================================================================
-
-gulp.task('compile', function() {
-    return gulp.src('*.scss')
-    // Error handling. If there is an error in sass syntax it will toss out a red error in the console, toss a notification and fire a warning sound
-        .pipe(plugins.plumber({ errorHandler: function(err) {
-            plugins.notify.onError({
-                title: "Gulp error in " + err.plugin,
-                message:  err.toString()
-            })(err);
-            // play a sound once
-            plugins.util.beep();
-            this.emit('end');
-        }}))
-        //Sourcemaps are for ease of use and debugging. It will out line which scss file has certain css code
-        .pipe(plugins.sourcemaps.init())
-        //Sass plugin is compiling the sass into css
-        .pipe(plugins.sass())
-        .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest('../dist/css/'));
-});
 
 
 
