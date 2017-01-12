@@ -5,6 +5,7 @@
 var config = require('../_config.json'),
     gulp = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins')
+    
 ;
 
 //Loading of plugins
@@ -107,6 +108,8 @@ gulp.task('compile-sass', function() {
     //Sourcemaps are for ease of use and debugging. It will out line which scss file has certain css code
     .pipe(plugins.sourcemaps.init())
     
+    // AUTOPREFIXER
+    
     //Sass plugin is compiling the sass into css
     .pipe(plugins.sass())
     .pipe(plugins.sourcemaps.write('.'))
@@ -185,36 +188,29 @@ gulp.task('default', function () {
 
 // GULP TASK [PRODUCTION] =============================================================================================
 
-gulp.task('deploy', function () {
-    
-    // A. MINIFY CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
-    return gulp.src(ROOT + '/dist/css/*.css')
+// A. MINIFY CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        .pipe(plugins.cleanCss())
-        .pipe(gulp.dest(ROOT + 'dist/minified/css'));
-        
-    // A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    
-    // B. MINIFY JS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    
-    
-    // B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-});
-
-// END ================================================================================================================
-
-
-
-//Minify CSS
 gulp.task('minify-css', function(){
-    return gulp.src('dist/css/style.css')
-        .pipe(plugins.cleanCss())
-        .pipe(gulp.dest('dist/minified/css'));
+    return gulp.src(ROOT + 'dist/css/style.css')
+    .pipe(plugins.cleanCss())
+    .pipe(plugins.rename({
+        suffix: '.min'
+    }))
+    .pipe(gulp.dest(ROOT + 'dist/css'));
+});
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. COMPRESS JS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+gulp.task('compress-js', function(){
+    return gulp.src(ROOT + 'dist/js/app.js')
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
+        suffix: '.min'
+    }))
+    .pipe(gulp.dest(ROOT + 'dist/js'));
 });
 
-//Minify JS
 gulp.task('compress', function (cb) {
     pump([
             gulp.src('dist/js/*.js'),
@@ -225,6 +221,21 @@ gulp.task('compress', function (cb) {
     );
 });
 
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// C. DEPLOY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+gulp.task('deploy', function () {
+        
+    return gulp.src(ROOT + '/dist/css/*.css')
+
+        .pipe(plugins.cleanCss())
+        .pipe(gulp.dest(ROOT + 'dist/minified/css'));
+
+});
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END ================================================================================================================
 
 // END OF FILE ========================================================================================================
