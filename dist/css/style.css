@@ -5814,6 +5814,30 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.no-gutters {
+  padding: 0;
+  border: 0; }
+
+.kd-store {
+  padding: 0;
+  opacity: 1;
+  transition: background-color 500ms ease-out 1s; }
+
+.m-button {
+  border: none;
+  box-shadow: none;
+  color: #fff; }
+  .m-button_red {
+    background: red; }
+  .m-button_blue {
+    background: blue; }
+  .m-button_small {
+    width: 50px; }
+  .m-button_medium {
+    width: 100px; }
+  .m-button_big {
+    width: 200px; }
+
 .o-block-lego {
   height: 200px;
   width: 100%;
@@ -5843,14 +5867,5 @@ button.close {
       color: #0000fe; }
   .o-block-lego-two__button_pink {
     background: pink; }
-
-.m-button {
-  border: none;
-  box-shadow: none;
-  color: #fff; }
-  .m-button_red {
-    background: red; }
-  .m-button_blue {
-    background: blue; }
 
 /*# sourceMappingURL=style.css.map */

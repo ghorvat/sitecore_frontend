@@ -1,1 +1,3 @@
 node_modules
+_system/bower_components
+**/.DS_Store

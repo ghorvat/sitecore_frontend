@@ -1,0 +1,42 @@
+{
+
+    "root": "",
+    
+    "dist" : {
+        
+        "js" : {
+            
+            "components" : {
+                
+                "bower" : [
+
+                    "jquery/dist/jquery.min.js",
+                    "bootstrap-sass/assets/javascripts/bootstrap.min.js"
+
+                ],
+
+                "order" : [
+
+                    "jquery.min.js",
+                    "bootstrap.min.js"
+
+                ],
+
+                "maps" : [
+
+                    "jquery/dist/jquery.min.map"
+
+                ]
+            }
+        },
+        
+        "css" : {
+            
+            "libraries" : [
+
+                "normalize.css/normalize.css"
+
+            ]
+        }
+    }
+}
