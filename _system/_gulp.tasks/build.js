@@ -4,8 +4,7 @@ var config = require('../_config.json'),
     gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
-    gutil = require('gulp-util')
-    ;
+    gutil = require('gulp-util');
 
 var ROOT = '../' + config.root;
 

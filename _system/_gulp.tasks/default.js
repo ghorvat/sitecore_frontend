@@ -118,35 +118,6 @@ gulp.task('compile-sass', function() {
 });
 
 
- gulp.task('watch-sass', function() {
-
-     return gulp.src(ROOT + '/build/scss/*.scss')
-
-     // Error handling. If there is an error in sass syntax it will toss out a red error in the console, toss a notification and fire a warning sound
-
-         .pipe(plugins.plumber({ errorHandler: function(err) {
-             plugins.notify.onError({
-                 title: "Gulp error in " + err.plugin,
-                 message:  err.toString()
-             })(err);
-             // play a sound once
-             plugins.util.beep();
-             this.emit('end');
-         }}))
-
-         //Sourcemaps are for ease of use and debugging. It will out line which scss file has certain css code
-         .pipe(plugins.sourcemaps.init())
-
-         // AUTOPREFIXER
-
-         //Sass plugin is compiling the sass into css
-         .pipe(plugins.sass())
-         .pipe(plugins.sourcemaps.write('.'))
-         .pipe(gulp.dest('../dist/css/'));
-
- });
-
-
 gulp.task('autoprefix', function () {
     
     // A. MINIFY CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
